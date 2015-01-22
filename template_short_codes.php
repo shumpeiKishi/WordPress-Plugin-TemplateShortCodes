@@ -12,19 +12,6 @@ class TemplatePartShortCodes {
 	function __construct () {
 		add_shortcode( 'template_part', array($this, 'template_part'));
 	}
-	function page_title() {
-		return get_the_title();
-	}
-	function featured_image_url() {
-		global $post;
-		if (has_post_thumbnail()) { // check if the post has a Post Thumbnail assigned to it.
-			$thumbnail_id = get_post_thumbnail_id($post->ID);
-			$thumbnail_url = wp_get_attachment_image_src( $thumbnail_id, 'full');
-			return $thumbnail_url[0];
-		} else {
-			return;
-		}
-	}
 
 	function template_part($args) {
 		ob_start();
