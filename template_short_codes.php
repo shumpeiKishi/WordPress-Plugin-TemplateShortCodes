@@ -8,10 +8,8 @@ Version: 0.0
 Author URI: http://shumpeikishi.com
 License: CC0
 */
-class AddShortCodes {
+class TemplatePartShortCodes {
 	function __construct () {
-		add_shortcode( 'page_title', array($this, 'page_title'));
-		add_shortcode( 'featured_image_url', array($this, 'featured_image_url'));
 		add_shortcode( 'template_part', array($this, 'template_part'));
 	}
 	function page_title() {
@@ -34,5 +32,5 @@ class AddShortCodes {
 		return ob_get_clean();
 	}
 }
-$addShortCodes = new AddShortCodes();
+$templatePartShortCodes = new TemplatePartShortCodes();
 ?>
